@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Patrick+Hand&family=Shrikhand&display=swap');
 
 html, body {
   margin: 0;
@@ -11,8 +11,20 @@ html, body {
   color: white;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s;
+}
+
+a:hover {
+  transform: scale(1.25);
+}
+
+/* Navigational components, ie the top navbar content. */
 .navbar {
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   display: flex;
@@ -23,31 +35,18 @@ html, body {
   background-color: black;
 }
 
-.navbar .logo {
-  display: inline-block;
-  height: 8vh;
-  vertical-align: middle;
-  transition: transform 0.3s;
-}
-
-.navbar .logo:hover {
-  transform: scale(1.6);
-}
-
-.navbar a {
-  padding: 0 1.42vw;
+.navText {
+  padding: 0 1.3vw;
   text-align: center;
-  text-decoration: none;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Shrikhand', cursive;
   font-weight: normal;
   font-size: 1.4rem;
-  color: white;
 }
 
 /* This is the Aminoo Logo Text, getting it left aligned. */
-.navbar a:nth-child(2) {
+.navbar a:first-child {
   margin-right: auto;
-  padding-left: 0;
+  padding-left: 2vw;
   font-weight: bold;
   font-size: 2rem;
 }
@@ -57,124 +56,76 @@ html, body {
   padding-right: 3vw;
 }
 
-.navText {
-  transition: color 0.3s, transform 0.3s, font-size 0.3s;
-}
-
-.navText:hover {
-  transform: scale(1.2);
-  color: #cccccc;
-}
-
-.content {
-  padding-top: 2vh;
-}
-
 section {
+  z-index: 0;
   padding-top: 10vh;
+  padding-bottom: 4vh;
   width: 100vw;
   min-height: 100vh;
-  padding-bottom: 4vh;
-}
-
-#What {
-  background-color: #16161D;
-  text-align: right;
-}
-
-#Team {
-  background-color: #140913;
-  text-align: center;
-}
-
-#Careers {
-  background-color: #16161D;
-  text-align: left;
-}
-
-#Careers .sectionImg img {
-  width: 30vw;
-  padding-left: 4vw;
-}
-
-#Contact {
-  background-color: black;
-  text-align: left;
-}
-
-#Contact .sectionImg img {
-  width: 30vw;
-  padding-right: 4vw;
-}
-
-.flexSection {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   align-content: center;
 }
 
 .sectionText {
   margin-top: 6vh;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Patrick Hand', sans-serif;
   color: white;
   transition: width 0.4s;
-  width: 55vw;
+  width: 50vw;
 }
 
 .sectionText h1 {
   margin: 0 0 2vh 0;
+  font-family: 'Lobster', cursive;
   font-weight: bold;
   font-size: 4.5rem;
+  transition: transform 0.3s;
+}
+
+.sectionText h1:hover {
+  transform: scale(1.1);
 }
 
 .sectionText h2 {
   margin: 0 0 2vh 0;
   font-weight: normal;
-  font-size: 3rem;
-  line-height: 1.5;
+  font-family: 'Shrikhand', cursive;
+  font-size: 2.6rem;
+  line-height: 1.8;
+  transition: transform 0.3s;
 }
 
-.sectionText h2 a:hover {
-  font-size: 3.2rem;
+.sectionText h2:hover {
+  transform: scale(1.1);
 }
 
 .sectionText h4 {
   margin: 0 0 2vh 0;
   font-weight: normal;
-  font-size: 1.6rem;
-  line-height: 1.6;
-}
-
-.sectionText a {
-  color: white;
-  text-decoration-color: white;
-  transition: font-size 0.3s;
-}
-
-.sectionText a:hover {
   font-size: 2rem;
+  line-height: 1.8;
 }
 
 .sectionImg img {
-  width: 35vw;
+  display: block;
+  padding-bottom: 4vh;
+  padding-top: 4vh;
+  width: 30vw;
+  transition: transform 0.3s;
 }
 
-#What .sectionImg img {
-  height: 100vh;
+.sectionImg img:hover {
+  transform: scale(1.2);
 }
 
+/* Card view for section templates. */
 .sectionCard {
-  min-height: 20vh;
-  font-family: 'Lato', sans-serif;
   font-weight: normal;
-  background-color: #1f2f3b;
   padding: 2vh 2vw;
   margin: 5vh 5vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   border-radius: 2vh;
 }
 
@@ -182,36 +133,89 @@ section {
   width: 15vw;
   vertical-align: middle;
   border-radius: 2vh;
-  flex: 0 0 15vw;
   padding-right: 1vh;
 }
 
 .sectionCard h2 {
-  margin: 3vh 2vw 1vh;
+  padding: 2vh 2vw;
   font-weight: normal;
+  font-family: 'Shrikhand', cursive;
   font-size: 2rem;
-  flex: 0 1 15vw;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.talkButton {
+  margin-top: 4vh;
+  width: 20vw;
+  padding: 2vh 0;
+  text-align: center;
+  border-radius: 2em;
+  background-color: #01A755;
+  font-size: 2rem;
+  font-family: 'Shrikhand', cursive;
+  transition: transform 0.3s;
+}
+
+.talkButton:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  font-family: 'Shrikhand', cursive;
+  width: 100vw;
+  padding: 3vh 3vw;
+  text-align: left;
+  font-size: 2rem;
+}
+
+footer a {
+  text-decoration: underline;
+  transition: transform 0.3s;
+}
+
+footer a:hover {
+  transform: scale(1.2);
+}
+
+/* Specific Section ID Colors, text alignments. */
+#Intro {
+  background-color: #e1393e;
+}
+
+#Bio {
+  background-color: #F5812A;
+  text-align: left;
+}
+
+#Career {
+  background-color: #01A755;
+  text-align: left;
+}
+
+#Cast {
+  background-color: #0099ff;
   text-align: center;
 }
 
-.sectionCard h3 {
-  margin: 1vh 2vw;
-  font-size: 1.5rem;
-  font-weight: normal;
-  text-align: left;
-  line-height: 1.5;
-  flex: 1 1 auto;
+#Cast .sectionText {
+  width: 80vw;
+}
+
+#Quotes {
+  background-color: #fcac4f;
   text-align: left;
 }
 
-@media (max-width: 600px) {
+/* Media tags to make website responsive / fluid design. Handle tablet and mobile case. */
+@media (max-width: 650px) {
   .sectionText {
     width: 80vw;
-    text-align: center;
+    text-align: left;
   }
 
   .sectionImg img {
-    width: 45vw;
+    width: 50vw;
   }
 }
 
